@@ -15,7 +15,7 @@ class SrcCommandTest extends TestCase
         $Application = new Application();
         $Application->add(new SrcCommand());
 
-        $Command = $Application->find('validate-email-cli:src');
+        $Command = $Application->find(SrcCommand::signature);
         $CommandTester = new CommandTester($Command);
         $CommandTester->execute([]);
 
