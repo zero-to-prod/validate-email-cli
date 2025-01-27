@@ -3,11 +3,13 @@
 
 use Symfony\Component\Console\Application;
 use Zerotoprod\ValidateEmailCli\SrcCommand;
+use Zerotoprod\ValidateEmailCli\ValidateCommand;
 
 require getcwd().'/vendor/autoload.php';
 
 $Application = (new Application());
 
 $Application->add(new SrcCommand());
+$Application->add(new ValidateCommand());
 
 $Application->run();
