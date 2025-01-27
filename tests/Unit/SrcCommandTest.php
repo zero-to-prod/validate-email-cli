@@ -6,7 +6,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
-use Zerotoprod\:package_namespace\SrcCommand;
+use Zerotoprod\ValidateEmailCli\SrcCommand;
 
 class SrcCommandTest extends TestCase
 {
@@ -15,7 +15,7 @@ class SrcCommandTest extends TestCase
         $Application = new Application();
         $Application->add(new SrcCommand());
 
-        $Command = $Application->find(':package_slug:src');
+        $Command = $Application->find('validate-email-cli:src');
         $CommandTester = new CommandTester($Command);
         $CommandTester->execute([]);
 
