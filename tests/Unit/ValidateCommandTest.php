@@ -8,14 +8,14 @@ use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
 use Zerotoprod\ValidateEmailCli\SrcCommand;
 
-class SrcCommandTest extends TestCase
+class ValidateCommandTest extends TestCase
 {
     #[Test] public function command(): void
     {
         $Application = new Application();
         $Application->add(new SrcCommand());
 
-        $Command = $Application->find(SrcCommand::signature);
+        $Command = $Application->find('validate-email-cli:src');
         $CommandTester = new CommandTester($Command);
         $CommandTester->execute([]);
 
