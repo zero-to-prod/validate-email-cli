@@ -8,11 +8,12 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 
 #[AsCommand(
-    name: 'validate-email-cli:src',
+    name: SrcCommand::signature,
     description: 'Project source link'
 )]
 class SrcCommand extends Command
 {
+    public const signature = 'validate-email-cli:src';
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
