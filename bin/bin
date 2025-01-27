@@ -1,0 +1,13 @@
+#!/usr/bin/env php
+<?php
+
+use Symfony\Component\Console\Application;
+use Zerotoprod\:package_namespace\SrcCommand;
+
+require getcwd().'/vendor/autoload.php';
+
+$Application = (new Application());
+
+$Application->add(new SrcCommand());
+
+$Application->run();
