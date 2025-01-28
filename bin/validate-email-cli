@@ -2,14 +2,12 @@
 <?php
 
 use Symfony\Component\Console\Application;
-use Zerotoprod\ValidateEmailCli\SrcCommand;
-use Zerotoprod\ValidateEmailCli\ValidateCommand;
+use Zerotoprod\ValidateEmailCli\ValidateEmailCli;
 
 require getcwd().'/vendor/autoload.php';
 
 $Application = (new Application());
 
-$Application->add(new SrcCommand());
-$Application->add(new ValidateCommand());
+ValidateEmailCli::register($Application);
 
 $Application->run();
