@@ -6,18 +6,20 @@ use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
-use Zerotoprod\ValidateEmailCli\SrcCommand;
+use Zerotoprod\ValidateEmailCli\ValidateCommand;
 
 class ValidateCommandTest extends TestCase
 {
     #[Test] public function command(): void
     {
         $Application = new Application();
-        $Application->add(new SrcCommand());
+        $Application->add(new ValidateCommand());
 
-        $Command = $Application->find('validate-email-cli:src');
+        $Command = $Application->find(ValidateCommand::signature);
         $CommandTester = new CommandTester($Command);
-        $CommandTester->execute([]);
+        $CommandTester->execute([
+            ValidateCommand::email => 'user@domain.com'
+        ]);
 
         $CommandTester->assertCommandIsSuccessful();
     }
