@@ -10,8 +10,8 @@ use Symfony\Component\Console\Output\OutputInterface;
 use Zerotoprod\ValidateEmail\ValidateEmail;
 
 #[AsCommand(
-    name: 'validate-email-cli:validate',
-    description: 'Validates an email. Returns `true` or `false`.'
+    name: ValidateCommand::signature,
+    description: 'Validates an email. Returns the email when valid, null otherwise.'
 )]
 class ValidateCommand extends Command
 {
@@ -20,10 +20,11 @@ class ValidateCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
+        $email = $input->getArgument(self::email);
         $output->writeLn(
-            ValidateEmail::isEmail($input->getArgument(self::email))
-                ? 'true'
-                : 'false'
+            ValidateEmail::isEmail($email)
+                ? $email
+                : ''
         );
 
         return Command::SUCCESS;
@@ -31,6 +32,6 @@ class ValidateCommand extends Command
 
     protected function configure(): void
     {
-        $this->addArgument(self::email, InputArgument::REQUIRED, 'email');
+        $this->addArgument(self::email, InputArgument::REQUIRED, self::email);
     }
 }
