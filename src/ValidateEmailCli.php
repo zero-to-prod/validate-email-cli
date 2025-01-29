@@ -3,6 +3,7 @@
 namespace Zerotoprod\ValidateEmailCli;
 
 use Symfony\Component\Console\Application;
+use Zerotoprod\ValidateEmailCli\Src\SrcCommand;
 
 class ValidateEmailCli
 {
