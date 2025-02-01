@@ -6,20 +6,18 @@ use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
-use Zerotoprod\ValidateEmailCli\Validate\ValidateCommand;
+use Zerotoprod\ValidateEmailCli\ShowRegex\ShowRegexCommand;
 
-class ValidateCommandTest extends TestCase
+class ShowRegexCommandTest extends TestCase
 {
     #[Test] public function command(): void
     {
         $Application = new Application();
-        $Application->add(new ValidateCommand());
+        $Application->add(new ShowRegexCommand());
 
-        $Command = $Application->find(ValidateCommand::signature);
+        $Command = $Application->find(ShowRegexCommand::signature);
         $CommandTester = new CommandTester($Command);
-        $CommandTester->execute([
-            ValidateCommand::email => 'user@domain.com'
-        ]);
+        $CommandTester->execute([]);
 
         $CommandTester->assertCommandIsSuccessful();
     }

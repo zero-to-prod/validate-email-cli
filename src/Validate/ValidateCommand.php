@@ -1,6 +1,6 @@
 <?php
 
-namespace Zerotoprod\ValidateEmailCli;
+namespace Zerotoprod\ValidateEmailCli\Validate;
 
 use Symfony\Component\Console\Attribute\AsCommand;
 use Symfony\Component\Console\Command\Command;
