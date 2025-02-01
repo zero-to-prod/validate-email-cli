@@ -6,7 +6,7 @@ use PHPUnit\Framework\Attributes\Test;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
 use Tests\TestCase;
-use Zerotoprod\ValidateEmailCli\ValidateCommand;
+use Zerotoprod\ValidateEmailCli\Validate\ValidateCommand;
 
 class ValidateCommandTest extends TestCase
 {
