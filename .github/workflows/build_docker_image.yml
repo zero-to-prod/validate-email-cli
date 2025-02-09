@@ -44,8 +44,6 @@ jobs:
           tags: |
             davidsmith3/validate-email-cli:latest
             davidsmith3/validate-email-cli:${{ env.VERSION }}
-          cache-from: type=registry,ref=davidsmith3/validate-email-cli:buildcache
-          cache-to: type=registry,ref=davidsmith3/validate-email-cli:buildcache,mode=max
           build-args: |
             NODE_ENV=production
           labels: |
