@@ -9,13 +9,22 @@ use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
 use Zerotoprod\ValidateEmail\ValidateEmail;
 
+/**
+ * @link https://github.com/zero-to-prod/validate-email-cli
+ */
 #[AsCommand(
     name: ValidateCommand::signature,
     description: 'Validates an email. Returns the email when valid, null otherwise.'
 )]
 class ValidateCommand extends Command
 {
+    /**
+     * @link https://github.com/zero-to-prod/validate-email-cli
+     */
     public const signature = 'validate-email-cli:validate';
+    /**
+     * @link https://github.com/zero-to-prod/validate-email-cli
+     */
     public const email = 'email';
 
     protected function execute(InputInterface $input, OutputInterface $output): int
